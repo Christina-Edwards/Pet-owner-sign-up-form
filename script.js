@@ -45,3 +45,14 @@ function saveForm() {
     zip,
     petName,
     petType
+   petType
+  });
+
+  console.table(state); // Final proof of life
+  state.petOwner.status(); // Bonus method
+}
+
+// Hook up button
+document.getElementById("signUpBtn").addEventListener("click", saveForm);
+
+
