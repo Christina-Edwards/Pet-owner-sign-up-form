@@ -26,4 +26,22 @@ function saveForm() {
   const zip = document.getElementById("zip").value;
   const petName = document.getElementById("petName").value;
   const petType = document.getElementById("petType").value;
+  
+ // Proof of life for each input
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Phone:", phone);
+  console.log("City:", city);
+  console.log("Zip:", zip);
+  console.log("Pet Name:", petName);
+  console.log("Pet Type:", petType);
 
+  // Populate state
+  state.petOwner = createPetOwner({
+    name,
+    email,
+    phone,
+    city,
+    zip,
+    petName,
+    petType
