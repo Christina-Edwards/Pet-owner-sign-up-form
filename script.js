@@ -44,8 +44,8 @@ function saveForm() {
     city,
     zip,
     petName,
-    petType
-   petType
+    petType,
+    petType,
   });
 
   console.table(state); // Final proof of life
