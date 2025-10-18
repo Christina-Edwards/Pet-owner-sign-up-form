@@ -1,3 +1,23 @@
+// Factory function to create a pet owner object
+function createPetOwner(name, email, phone, city, zip, petName, petType) {
+  return {
+    name,
+    email,
+    phone,
+    city,
+    zip,
+    petName,
+    petType,
+
+    status() {
+      console.log(`Owner: ${this.name}`);
+      console.log(`Email: ${this.email}, Phone: ${this.phone}`);
+      console.log(`Location: ${this.city}, ${this.zip}`);
+      console.log(`Pet: ${this.petName} (${this.petType})`);
+    }
+  };
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("script.js loaded");
 
@@ -8,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Sign Up button clicked!");
 
     // Capture form values
-    const ownerName = document.getElementById("ownerName").value;
+    const name = document.getElementById("ownerName").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const city = document.getElementById("city").value;
@@ -16,16 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const petName = document.getElementById("petName").value;
     const petType = document.getElementById("petType").value;
 
-    // Log captured values
-    console.log({
-      ownerName,
-      email,
-      phone,
-      city,
-      zip,
-      petName,
-      petType
-    });
+    // Create petOwner object
+    const petOwner = createPetOwner(name, email, phone, city, zip, petName, petType);
+
+    // Proof of life
+    petOwner.status();
+    console.table(petOwner);
   });
 });
 
