@@ -1,23 +1,14 @@
-console.log("Hello from pets.js!");
+const ownerList = document.getElementById("ownerList");
 
-const globalState = {
-  pets: []
-};
+const card = document.createElement("div");
+card.className = "card p-3 mb-2";
+card.innerHTML = `
+  <h5>${petOwner.name}</h5>
+  <p><strong>Email:</strong> ${petOwner.email}</p>
+  <p><strong>Phone:</strong> ${petOwner.phone}</p>
+  <p><strong>Location:</strong> ${petOwner.city}, ${petOwner.zip}</p>
+  <p><strong>Pet:</strong> ${petOwner.petName} (${petOwner.petType})</p>
+`;
 
-// Proof-of-life: create pet "Hello"
-const helloPet = createPet("Hello", 2, "Dog");
-helloPet.status();
+ownerList.appendChild(card);
 
-document.getElementById("createPetBtn").addEventListener("click", () => {
-  const name = document.getElementById("petNameInput").value;
-  const age = parseInt(document.getElementById("petAgeInput").value);
-  const species = document.getElementById("petSpeciesInput").value;
-
-  console.log("Form Input Values:", { name, age, species });
-
-  const newPet = createPet(name, age, species);
-  globalState.pets.push(newPet);
-
-  newPet.status();
-  console.table(globalState.pets);
-});

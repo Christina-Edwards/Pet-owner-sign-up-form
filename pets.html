@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Pet Management System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="p-4">
   <h1>Pet Creator</h1>
-  <form id="petForm">
+
+  <form id="petForm" class="d-flex flex-column gap-3">
     <input type="text" id="petNameInput" placeholder="Pet's Name" />
     <input type="number" id="petAgeInput" placeholder="Pet's Age" />
     <select id="petSpeciesInput">
@@ -14,26 +16,14 @@
       <option value="Cat">Cat</option>
       <option value="Fish">Fish</option>
     </select>
-   <button id="signUpBtn" type="button" class="btn btn-primary">Sign Up</button>
-
+    <button id="signUpBtn" type="button" class="btn btn-primary">Sign Up</button>
   </form>
 
+  <div id="ownerList" class="mt-4"></div>
+
+  <!-- Load scripts in correct order -->
+  <script src="state.js"></script>
   <script src="petCreator.js"></script>
   <script src="pets.js"></script>
-  <div id="ownerList" class="mt-4"></div>
-const ownerList = document.getElementById("ownerList");
-
-const card = document.createElement("div");
-card.className = "card p-3 mb-2";
-card.innerHTML = `
-  <h5>${petOwner.name}</h5>
-  <p><strong>Email:</strong> ${petOwner.email}</p>
-  <p><strongPhone:</strong> ${petOwner.phone}</p>
-  <p><strong>Location:</strong> ${petOwner.city}, ${petOwner.zip}</p>
-  <p><strong>Pet:</strong> ${petOwner.petName} (${petOwner.petType})</p>
-`;
-
-ownerList.appendChild(card);
-
 </body>
 </html>
