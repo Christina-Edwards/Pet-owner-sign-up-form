@@ -53,6 +53,9 @@ function saveForm() {
 }
 
 // Hook up button
-document.getElementById("signUpBtn").addEventListener("click", saveForm);
+document.getElementById("signUpBtn").addEventListener("click", () => {
+  console.log("Sign Up button clicked!");
+});
+
 
 
