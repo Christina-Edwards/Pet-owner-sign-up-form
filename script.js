@@ -1,3 +1,5 @@
+console.log("script.js loaded");
+
 // Proof of life
 console.log("hello world");
 
