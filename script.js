@@ -58,6 +58,25 @@ function saveForm() {
 document.getElementById("signUpBtn").addEventListener("click", () => {
   console.log("Sign Up button clicked!");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // All your DOM-related code goes here
+  const signUpBtn = document.getElementById("signUpBtn");
+
+  signUpBtn.addEventListener("click", () => {
+    console.log("Sign Up button clicked!");
+
+    // Grab form values
+    const ownerName = document.getElementById("ownerName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const city = document.getElementById("city").value;
+    const zip = document.getElementById("zip").value;
+    const petName = document.getElementById("petName").value;
+    const petType = document.getElementById("petType").value;
+
+    console.log({ ownerName, email, phone, city, zip, petName, petType });
+  });
+});
 
 
 
